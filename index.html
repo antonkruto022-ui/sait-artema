@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Курицын Артём — Личный сайт</title>
+  <!-- Шрифт Inter в стиле Apple / Notion -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Плавающая стеклянная шапка с переключателем 4 разделов -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" aria-label="Навигация по разделам">
+      <a href="#about" class="nav-logo" data-tab-trigger="about">
+        <span class="logo-avatar">АК</span>
+        <span>Курицын Артём</span>
+      </a>
+
+      <!-- Переключатель 4 разделов -->
+      <div class="nav-tabs" role="tablist" aria-label="Разделы сайта">
+        <button class="nav-tab active" role="tab" aria-selected="true" data-tab="about" type="button">
+          👤 Обо мне
+        </button>
+        <button class="nav-tab" role="tab" aria-selected="false" data-tab="sports" type="button">
+          🏋️‍♂️ Спорт
+        </button>
+        <button class="nav-tab" role="tab" aria-selected="false" data-tab="games" type="button">
+          🎮 Игры
+        </button>
+        <button class="nav-tab" role="tab" aria-selected="false" data-tab="movies" type="button">
+          🎬 Фильмы
+        </button>
+      </div>
+
+      <div class="nav-actions">
+        <a href="https://vk.ru/temma9" target="_blank" rel="noopener noreferrer" class="btn-vk-nav">
+          <span>ВК</span>
+          <span class="external-arrow">↗</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- ==================== РАЗДЕЛ 1: ИНФОРМАЦИЯ ОБО МНЕ ==================== -->
+    <section id="section-about" class="tab-section active" role="tabpanel">
+      <!-- Главная карточка профиля -->
+      <div class="hero-card bento-card">
+        <div class="hero-top">
+          <div class="avatar-wrapper" id="avatarTrigger" title="Нажмите, чтобы загрузить своё фото">
+            <img
+              id="avatarImg"
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='%230071e3'/><stop offset='100%' stop-color='%235856d6'/></linearGradient></defs><rect width='200' height='200' rx='48' fill='url(%23g)'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Inter, sans-serif' font-weight='800' font-size='68'>АК</text></svg>"
+              alt="Курицын Артём"
+              class="avatar-img"
+            />
+            <span class="avatar-edit-overlay">📷 Сменить фото</span>
+            <input type="file" id="avatarInput" accept="image/*" hidden />
+          </div>
+
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span>Курсант / Студент • Информационная безопасность</span>
+          </div>
+        </div>
+
+        <h1 class="hero-title">Привет! Меня зовут Курицын Артём 👋</h1>
+        <p class="hero-subtitle">
+          Мне 18 лет, я живу в городе Бор и учусь в Нижегородском речном училище на специальности «Обеспечение информационной безопасности». Активно занимаюсь спортом в тренажёрном зале, а в свободное время люблю поиграть в хорошие игры и посмотреть отличное кино.
+        </p>
+
+        <!-- Быстрые факты-свойства -->
+        <div class="quick-facts">
+          <div class="fact-pill">
+            <span class="fact-icon">🎂</span>
+            <span><strong>Дата рождения:</strong> 03.02.2008 (18 лет)</span>
+          </div>
+          <div class="fact-pill">
+            <span class="fact-icon">📍</span>
+            <span><strong>Город:</strong> г. Бор</span>
+          </div>
+          <div class="fact-pill">
+            <span class="fact-icon">🛡️</span>
+            <span><strong>Специальность:</strong> Информационная безопасность</span>
+          </div>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="https://vk.ru/temma9" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            💬 Мой ВКонтакте (vk.ru/temma9) ↗
+          </a>
+          <button class="btn-secondary" type="button" data-tab-jump="sports">
+            Перейти к моим увлечениям →
+          </button>
+        </div>
+      </div>
+
+      <!-- Bento-сетка с подробной информацией -->
+      <div class="bento-grid">
+        <!-- Карточка учёбы -->
+        <article class="bento-card span-7">
+          <div class="card-tag">⚓ Где я учусь</div>
+          <h2 class="card-title">Нижегородское речное училище</h2>
+          <p class="edu-specialty">
+            Специальность: <strong>Обеспечение информационной безопасности</strong>
+          </p>
+          <p class="card-text">
+            Изучаю современные методы защиты информации, компьютерные сети, безопасность систем и технические средства защиты данных. Это перспективное и ответственное направление, которое требует внимательности, логики и постоянного развития в сфере IT.
+          </p>
+
+          <div class="subject-tags">
+            <span class="subject-tag">🔐 Защита информации</span>
+            <span class="subject-tag">🌐 Компьютерные сети</span>
+            <span class="subject-tag">💻 IT и безопасность</span>
+            <span class="subject-tag">⚓ НРУ</span>
+          </div>
+        </article>
+
+        <!-- Личная карточка (Анкетные данные и ВК) -->
+        <article class="bento-card span-5">
+          <div class="card-tag">📋 Личная карточка</div>
+          <h2 class="card-title">Коротко обо мне</h2>
+
+          <ul class="info-list">
+            <li class="info-item">
+              <span class="info-label">ФИО</span>
+              <span class="info-value">Курицын Артём</span>
+            </li>
+            <li class="info-item">
+              <span class="info-label">Дата рождения</span>
+              <span class="info-value">03 февраля 2008 г.</span>
+            </li>
+            <li class="info-item">
+              <span class="info-label">Возраст</span>
+              <span class="info-value">18 лет</span>
+            </li>
+            <li class="info-item">
+              <span class="info-label">Родной город</span>
+              <span class="info-value">г. Бор</span>
+            </li>
+            <li class="info-item">
+              <span class="info-label">ВКонтакте</span>
+              <a href="https://vk.ru/temma9" target="_blank" rel="noopener noreferrer" class="info-link">vk.ru/temma9 ↗</a>
+            </li>
+          </ul>
+
+          <button id="copyVkBtn" class="btn-copy-full" type="button" data-copy="https://vk.ru/temma9">
+            📋 Скопировать ссылку на ВК
+          </button>
+        </article>
+
+        <!-- Быстрый переход по разделам сайта -->
+        <article class="bento-card span-12">
+          <div class="card-tag">🧭 Разделы сайта</div>
+          <h2 class="card-title">Мои интересы и увлечения</h2>
+          <p class="card-text">
+            Выберите интересующий раздел ниже или в верхнем меню — внутри каждого раздела появятся карточки с картинками. Нажмите на любую картинку, чтобы прочитать описание!
+          </p>
+
+          <div class="section-preview-grid">
+            <button class="preview-card" type="button" data-tab-jump="sports">
+              <span class="preview-emoji">🏋️‍♂️</span>
+              <div class="preview-info">
+                <strong>Спортивные увлечения</strong>
+                <span>Тренажёрный зал и гандбол (2 карточки)</span>
+              </div>
+              <span class="preview-arrow">→</span>
+            </button>
+
+            <button class="preview-card" type="button" data-tab-jump="games">
+              <span class="preview-emoji">🎮</span>
+              <div class="preview-info">
+                <strong>Игры, в которые играю</strong>
+                <span>CS2, ETS 2, PUBG, GTA 5, Minecraft, Farming Simulator, Forza 6</span>
+              </div>
+              <span class="preview-arrow">→</span>
+            </button>
+
+            <button class="preview-card" type="button" data-tab-jump="movies">
+              <span class="preview-emoji">🎬</span>
+              <div class="preview-info">
+                <strong>Фильмы, которые смотрю</strong>
+                <span>Гарри Поттер, Один дома, Холоп, Чебурашка, Ждун, Операция «Ы», Брат</span>
+              </div>
+              <span class="preview-arrow">→</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== РАЗДЕЛ 2: СПОРТИВНЫЕ УВЛЕЧЕНИЯ ==================== -->
+    <section id="section-sports" class="tab-section" role="tabpanel" hidden>
+      <div class="section-header">
+        <span class="section-eyebrow">Раздел 2 • Активный образ жизни</span>
+        <h2 class="section-title">Спортивные увлечения</h2>
+        <p class="section-desc">
+          👆 <strong>Нажмите на любую картинку</strong>, чтобы открыть подробное описание моего спортивного увлечения.
+        </p>
+      </div>
+
+      <div class="interactive-grid sports-grid">
+        <!-- 1. Тренажёрный зал -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gymBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#1e293b"/>
+                  <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+                <linearGradient id="gymAccent" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#3b82f6"/>
+                  <stop offset="100%" stop-color="#60a5fa"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="380" fill="url(#gymBg)"/>
+              <circle cx="480" cy="80" r="140" fill="#3b82f6" opacity="0.15"/>
+              <circle cx="120" cy="310" r="120" fill="#ef4444" opacity="0.12"/>
+              <!-- Гриф штанги -->
+              <rect x="90" y="182" width="420" height="16" rx="8" fill="#94a3b8"/>
+              <!-- Блины слева -->
+              <rect x="130" y="110" width="28" height="160" rx="8" fill="url(#gymAccent)"/>
+              <rect x="164" y="130" width="22" height="120" rx="6" fill="#64748b"/>
+              <rect x="102" y="140" width="22" height="100" rx="6" fill="#475569"/>
+              <!-- Блины справа -->
+              <rect x="442" y="110" width="28" height="160" rx="8" fill="url(#gymAccent)"/>
+              <rect x="414" y="130" width="22" height="120" rx="6" fill="#64748b"/>
+              <rect x="476" y="140" width="22" height="100" rx="6" fill="#475569"/>
+              <!-- Текст на фоне -->
+              <text x="300" y="330" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-weight="800" font-size="22" letter-spacing="4" opacity="0.85">GYM &amp; FITNESS</text>
+            </svg>
+            <span class="picture-badge badge-active">Занимаюсь сейчас</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">🏋️‍♂️ Тренажёрный зал</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              <strong>Моё главное спортивное увлечение сейчас.</strong> Регулярно хожу на тренировки в тренажёрный зал, работаю с железом, развиваю силу и выносливость. Тренировки отлично помогают переключиться после учёбы, закаляют характер и дисциплину.
+            </p>
+            <div class="desc-tags">
+              <span>Силовые тренировки</span>
+              <span>Дисциплина</span>
+              <span>Форма</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Гандбол -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="hbBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ea580c"/>
+                  <stop offset="100%" stop-color="#9a3412"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="380" fill="url(#hbBg)"/>
+              <!-- Разметка площадки -->
+              <path d="M 60 340 Q 300 220 540 340" stroke="rgba(255,255,255,0.3)" stroke-width="5" fill="none" stroke-dasharray="12 10"/>
+              <path d="M 120 360 Q 300 260 480 360" stroke="rgba(255,255,255,0.5)" stroke-width="4" fill="none"/>
+              <!-- Ворота -->
+              <rect x="210" y="75" width="180" height="115" fill="none" stroke="#ffffff" stroke-width="10" rx="4"/>
+              <!-- Сетка ворот -->
+              <line x1="240" y1="75" x2="240" y2="190" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+              <line x1="270" y1="75" x2="270" y2="190" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+              <line x1="300" y1="75" x2="300" y2="190" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+              <line x1="330" y1="75" x2="330" y2="190" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+              <line x1="360" y1="75" x2="360" y2="190" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+              <!-- Гандбольный мяч -->
+              <circle cx="300" cy="220" r="54" fill="#ffffff" stroke="#1e293b" stroke-width="5"/>
+              <polygon points="300,192 326,210 316,240 284,240 274,210" fill="#1e293b"/>
+              <line x1="300" y1="192" x2="300" y2="166" stroke="#1e293b" stroke-width="4"/>
+              <line x1="326" y1="210" x2="350" y2="200" stroke="#1e293b" stroke-width="4"/>
+              <line x1="316" y1="240" x2="334" y2="262" stroke="#1e293b" stroke-width="4"/>
+              <line x1="284" y1="240" x2="266" y2="262" stroke="#1e293b" stroke-width="4"/>
+              <line x1="274" y1="210" x2="250" y2="200" stroke="#1e293b" stroke-width="4"/>
+              <text x="300" y="335" text-anchor="middle" fill="#fff7ed" font-family="Inter, sans-serif" font-weight="800" font-size="22" letter-spacing="4">HANDBALL</text>
+            </svg>
+            <span class="picture-badge">Занимался раньше</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">🤾‍♂️ Гандбол</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              <strong>Командный вид спорта, которым я активно занимался раньше.</strong> Гандбол — это высокая скорость, точные броски в прыжке, быстрая реакция и настоящая командная работа. Этот опыт заложил отличную спортивную базу и выносливость.
+            </p>
+            <div class="desc-tags">
+              <span>Командная игра</span>
+              <span>Скорость и реакция</span>
+              <span>Спортивная база</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== РАЗДЕЛ 3: ИГРЫ, В КОТОРЫЕ ИГРАЮ ==================== -->
+    <section id="section-games" class="tab-section" role="tabpanel" hidden>
+      <div class="section-header">
+        <span class="section-eyebrow">Раздел 3 • Виртуальные миры</span>
+        <h2 class="section-title">Игры, в которые я играю</h2>
+        <p class="section-desc">
+          👆 <strong>Нажмите на картинку любой игры</strong>, чтобы прочитать, чем именно она мне нравится.
+        </p>
+      </div>
+
+      <div class="interactive-grid games-grid">
+        <!-- 1. CS2 -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="cs2Bg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#f97316"/>
+                  <stop offset="65%" stop-color="#ea580c"/>
+                  <stop offset="100%" stop-color="#1e293b"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#cs2Bg)"/>
+              <!-- Прицел -->
+              <circle cx="300" cy="155" r="72" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="4"/>
+              <circle cx="300" cy="155" r="4" fill="#ffffff"/>
+              <line x1="205" y1="155" x2="265" y2="155" stroke="rgba(255,255,255,0.65)" stroke-width="4"/>
+              <line x1="335" y1="155" x2="395" y2="155" stroke="rgba(255,255,255,0.65)" stroke-width="4"/>
+              <line x1="300" y1="60" x2="300" y2="120" stroke="rgba(255,255,255,0.65)" stroke-width="4"/>
+              <line x1="300" y1="190" x2="300" y2="250" stroke="rgba(255,255,255,0.65)" stroke-width="4"/>
+              <text x="300" y="172" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="64" letter-spacing="-2">CS2</text>
+              <text x="300" y="315" text-anchor="middle" fill="#fff7ed" font-family="Inter, sans-serif" font-weight="700" font-size="18" letter-spacing="5">COUNTER-STRIKE 2</text>
+            </svg>
+            <span class="picture-badge">Тактический шутер</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">🎯 Counter-Strike 2 (CS2)</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              Главный соревновательный шутер, в котором важны реакция, точная стрельба, раскидки гранат и сыгранность команды. Люблю за азарт матчей, напряжённые раунды и игру вместе с друзьями.
+            </p>
+            <div class="desc-tags">
+              <span>Шутер 5x5</span>
+              <span>Киберспорт</span>
+              <span>Тактика</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Euro Truck Simulator 2 -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="etsBg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#1e1b4b"/>
+                  <stop offset="55%" stop-color="#7c2d12"/>
+                  <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#etsBg)"/>
+              <!-- Закатное солнце -->
+              <circle cx="300" cy="180" r="65" fill="#fb923c" opacity="0.85"/>
+              <!-- Дорога -->
+              <polygon points="250,190 350,190 540,360 60,360" fill="#1e293b"/>
+              <line x1="300" y1="195" x2="300" y2="360" stroke="#facc15" stroke-width="6" stroke-dasharray="22 16"/>
+              <!-- Силуэт грузовика -->
+              <rect x="245" y="135" width="110" height="75" rx="8" fill="#0f172a" stroke="#f8fafc" stroke-width="3"/>
+              <rect x="258" y="148" width="84" height="30" rx="4" fill="#38bdf8" opacity="0.8"/>
+              <circle cx="268" cy="196" r="7" fill="#fef08a"/>
+              <circle cx="332" cy="196" r="7" fill="#fef08a"/>
+              <text x="300" y="75" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="24" letter-spacing="3">EURO TRUCK SIMULATOR 2</text>
+            </svg>
+            <span class="picture-badge">Симулятор дальнобойщика</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">🚛 Euro Truck Simulator 2</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              Атмосферный симулятор дальнобойщика. Включить любимую музыку или радио, сесть за руль мощного тягача и отправиться в дальний рейс по городам и автобанам Европы — лучший способ отдохнуть вечером.
+            </p>
+            <div class="desc-tags">
+              <span>Дальнобой</span>
+              <span>Дорожная атмосфера</span>
+              <span>Релакс</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. PUBG -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="pubgBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#422006"/>
+                  <stop offset="60%" stop-color="#854d0e"/>
+                  <stop offset="100%" stop-color="#1c1917"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#pubgBg)"/>
+              <!-- Парашют и аирдроп -->
+              <path d="M 220 110 Q 300 40 380 110 Z" fill="#facc15" opacity="0.9"/>
+              <line x1="230" y1="110" x2="275" y2="175" stroke="#fef08a" stroke-width="2"/>
+              <line x1="370" y1="110" x2="325" y2="175" stroke="#fef08a" stroke-width="2"/>
+              <rect x="260" y="175" width="80" height="65" rx="6" fill="#dc2626"/>
+              <rect x="260" y="195" width="80" height="25" fill="#1d4ed8"/>
+              <text x="300" y="310" text-anchor="middle" fill="#facc15" font-family="Inter, sans-serif" font-weight="800" font-size="38" letter-spacing="4">PUBG</text>
+            </svg>
+            <span class="picture-badge">Королевская битва</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">🪂 PUBG: Battlegrounds</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              Классика жанра Battle Royale. Высадка на огромный остров, поиск снаряжения, борьба за аирдропы и максимальный адреналин в последних кругах зоны, когда каждое решение определяет победу.
+            </p>
+            <div class="desc-tags">
+              <span>Battle Royale</span>
+              <span>Выживание</span>
+              <span>Сквады</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. GTA 5 -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gtaBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#065f46"/>
+                  <stop offset="50%" stop-color="#0f766e"/>
+                  <stop offset="100%" stop-color="#111827"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#gtaBg)"/>
+              <circle cx="460" cy="110" r="95" fill="#fde047" opacity="0.22"/>
+              <text x="300" y="195" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="68" letter-spacing="-2">GTA V</text>
+              <rect x="210" y="218" width="180" height="32" rx="6" fill="#16a34a"/>
+              <text x="300" y="240" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="16" letter-spacing="3">LOS SANTOS</text>
+            </svg>
+            <span class="picture-badge">Открытый мир</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">🌴 Grand Theft Auto V (GTA 5)</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              Культовый экшен в огромном солнечном Лос-Сантосе. Крутой сюжет с тремя героями, продуманные миссии, огромный выбор тюнингованных авто и полная свобода действий в открытом мире.
+            </p>
+            <div class="desc-tags">
+              <span>Открытый мир</span>
+              <span>Экшен</span>
+              <span>Автомобили</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Minecraft -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+              <rect width="600" height="360" fill="#14532d"/>
+              <!-- Кубический блок травы и земли -->
+              <rect x="215" y="75" width="170" height="170" rx="8" fill="#854d0e" stroke="#052e16" stroke-width="6"/>
+              <rect x="215" y="75" width="170" height="52" fill="#22c55e"/>
+              <rect x="235" y="127" width="22" height="18" fill="#22c55e"/>
+              <rect x="285" y="127" width="28" height="24" fill="#22c55e"/>
+              <rect x="340" y="127" width="20" height="15" fill="#22c55e"/>
+              <text x="300" y="305" text-anchor="middle" fill="#bbf7d0" font-family="Inter, sans-serif" font-weight="800" font-size="28" letter-spacing="4">MINECRAFT</text>
+            </svg>
+            <span class="picture-badge">Песочница и выживание</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">⛏️ Minecraft</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              Легендарная песочница, в которую всегда приятно вернуться. Выживание, добыча редких ресурсов, строительство масштабных баз и исследование бесконечного кубического мира.
+            </p>
+            <div class="desc-tags">
+              <span>Выживание</span>
+              <span>Строительство</span>
+              <span>Песочница</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Farming Simulator -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="farmBg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#0284c7"/>
+                  <stop offset="58%" stop-color="#eab308"/>
+                  <stop offset="100%" stop-color="#713f12"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#farmBg)"/>
+              <!-- Поле и трактор -->
+              <rect x="0" y="210" width="600" height="150" fill="#ca8a04"/>
+              <rect x="240" y="135" width="90" height="65" rx="8" fill="#16a34a"/>
+              <rect x="200" y="165" width="55" height="35" rx="6" fill="#15803d"/>
+              <circle cx="218" cy="208" r="22" fill="#1e293b" stroke="#facc15" stroke-width="6"/>
+              <circle cx="305" cy="200" r="32" fill="#1e293b" stroke="#facc15" stroke-width="8"/>
+              <text x="300" y="310" text-anchor="middle" fill="#fef9c3" font-family="Inter, sans-serif" font-weight="800" font-size="24" letter-spacing="3">FARMING SIMULATOR</text>
+            </svg>
+            <span class="picture-badge">Симулятор техники</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">🚜 Farming Simulator</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              Детальный симулятор управления фермой и мощной сельскохозяйственной техникой. Нравится развивать собственное хозяйство, работать на полях, покупать новые тракторы и комбайны.
+            </p>
+            <div class="desc-tags">
+              <span>Техника</span>
+              <span>Экономика</span>
+              <span>Симулятор</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Forza 6 -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="forzaBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#1d4ed8"/>
+                  <stop offset="60%" stop-color="#1e3a8a"/>
+                  <stop offset="100%" stop-color="#090d16"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#forzaBg)"/>
+              <!-- Гоночные полосы -->
+              <polygon points="140,0 210,0 110,360 40,360" fill="rgba(255,255,255,0.08)"/>
+              <polygon points="230,0 265,0 165,360 130,360" fill="rgba(56,189,248,0.18)"/>
+              <!-- Спидометр -->
+              <path d="M 190 220 A 110 110 0 0 1 410 220" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="14" stroke-linecap="round"/>
+              <path d="M 190 220 A 110 110 0 0 1 380 140" fill="none" stroke="#38bdf8" stroke-width="14" stroke-linecap="round"/>
+              <line x1="300" y1="220" x2="365" y2="150" stroke="#ef4444" stroke-width="6" stroke-linecap="round"/>
+              <circle cx="300" cy="220" r="12" fill="#ffffff"/>
+              <text x="300" y="305" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="30" letter-spacing="4">FORZA 6</text>
+            </svg>
+            <span class="picture-badge">Гоночный симулятор</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">🏎️ Forza Motorsport 6</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              Драйвовые кольцевые гонки с реалистичной физикой и шикарным автопарком. Люблю за высокие скорости, проработанные трассы, рев моторов и борьбу за каждую долю секунды на круге.
+            </p>
+            <div class="desc-tags">
+              <span>Гонки</span>
+              <span>Спорткары</span>
+              <span>Скорость</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== РАЗДЕЛ 4: ФИЛЬМЫ ==================== -->
+    <section id="section-movies" class="tab-section" role="tabpanel" hidden>
+      <div class="section-header">
+        <span class="section-eyebrow">Раздел 4 • Любимое кино</span>
+        <h2 class="section-title">Фильмы, которые я смотрю</h2>
+        <p class="section-desc">
+          👆 <strong>Нажмите на постер любого фильма</strong>, чтобы открыть его описание и узнать, почему он в моём списке.
+        </p>
+      </div>
+
+      <div class="interactive-grid movies-grid">
+        <!-- 1. Гарри Поттер -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="hpBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#0f172a"/>
+                  <stop offset="60%" stop-color="#1e1b4b"/>
+                  <stop offset="100%" stop-color="#31102f"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#hpBg)"/>
+              <!-- Круглые очки и молния -->
+              <circle cx="245" cy="170" r="42" fill="none" stroke="#f8fafc" stroke-width="7"/>
+              <circle cx="355" cy="170" r="42" fill="none" stroke="#f8fafc" stroke-width="7"/>
+              <path d="M 287 170 Q 300 158 313 170" fill="none" stroke="#f8fafc" stroke-width="7"/>
+              <!-- Молния -->
+              <polygon points="305,65 280,110 304,110 288,148 328,98 303,98" fill="#facc15"/>
+              <text x="300" y="305" text-anchor="middle" fill="#fde047" font-family="Inter, sans-serif" font-weight="800" font-size="26" letter-spacing="4">ГАРРИ ПОТТЕР</text>
+            </svg>
+            <span class="picture-badge">Фэнтези и приключения</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">⚡ Гарри Поттер</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              Легендарная серия фильмов о школе чародейства и волшебства Хогвартс. Невероятная атмосфера магии, тайны, верные друзья и история, которую всегда интересно пересматривать.
+            </p>
+            <div class="desc-tags">
+              <span>Фэнтези</span>
+              <span>Хогвартс</span>
+              <span>Классика</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Один дома -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="haBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#991b1b"/>
+                  <stop offset="100%" stop-color="#14532d"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#haBg)"/>
+              <!-- Силуэт дома -->
+              <polygon points="300,75 190,165 410,165" fill="#fef08a"/>
+              <rect x="215" y="165" width="170" height="100" rx="6" fill="#dc2626"/>
+              <rect x="240" y="185" width="40" height="36" rx="4" fill="#fef08a"/>
+              <rect x="320" y="185" width="40" height="36" rx="4" fill="#fef08a"/>
+              <rect x="284" y="215" width="32" height="50" fill="#78350f"/>
+              <text x="300" y="315" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="26" letter-spacing="4">ОДИН ДОМА</text>
+            </svg>
+            <span class="picture-badge">Семейная комедия</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">🏠 Один дома</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              Любимая комедия детства и символ новогоднего настроения. История про Кевина, который остался один в большом доме и устроил грабителям незабываемый приём с изобретательными ловушками.
+            </p>
+            <div class="desc-tags">
+              <span>Комедия</span>
+              <span>Новый год</span>
+              <span>Ностальгия</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Холоп -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="khBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#b45309"/>
+                  <stop offset="100%" stop-color="#451a03"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#khBg)"/>
+              <circle cx="300" cy="155" r="70" fill="#fef3c7" opacity="0.2"/>
+              <!-- Подкова / Колесо телеги -->
+              <circle cx="300" cy="155" r="56" fill="none" stroke="#fde68a" stroke-width="10"/>
+              <circle cx="300" cy="155" r="14" fill="#fde68a"/>
+              <line x1="300" y1="99" x2="300" y2="211" stroke="#fde68a" stroke-width="5"/>
+              <line x1="244" y1="155" x2="356" y2="155" stroke="#fde68a" stroke-width="5"/>
+              <text x="300" y="305" text-anchor="middle" fill="#fef3c7" font-family="Inter, sans-serif" font-weight="800" font-size="30" letter-spacing="5">ХОЛОП</text>
+            </svg>
+            <span class="picture-badge">Комедия</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">🐎 Холоп</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              Яркая и остроумная комедия про перевоспитание столичного мажора в специально построенной деревне XIX века. Отличный юмор, динамичный сюжет и харизматичные актёры.
+            </p>
+            <div class="desc-tags">
+              <span>Юмор</span>
+              <span>Приключения</span>
+              <span>Российское кино</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Чебурашка -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="chBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#f97316"/>
+                  <stop offset="100%" stop-color="#c2410c"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#chBg)"/>
+              <!-- Апельсины и уши -->
+              <circle cx="215" cy="155" r="46" fill="#7c2d12"/>
+              <circle cx="385" cy="155" r="46" fill="#7c2d12"/>
+              <circle cx="300" cy="155" r="56" fill="#9a3412"/>
+              <circle cx="300" cy="155" r="40" fill="#fed7aa"/>
+              <!-- Апельсин -->
+              <circle cx="300" cy="215" r="24" fill="#fb923c" stroke="#fff" stroke-width="3"/>
+              <text x="300" y="310" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="28" letter-spacing="4">ЧЕБУРАШКА</text>
+            </svg>
+            <span class="picture-badge">Семейный фильм</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">🍊 Чебурашка</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              Очень тёплый, солнечный и добрый фильм про знаменитого ушастого героя, который обожает апельсины. Красивые южные пейзажи, смешные моменты и душевная история о настоящей дружбе.
+            </p>
+            <div class="desc-tags">
+              <span>Доброе кино</span>
+              <span>Комедия</span>
+              <span>Семейный</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Ждун -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="zhBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#334155"/>
+                  <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#zhBg)"/>
+              <!-- Стилизованный силуэт Ждуна -->
+              <ellipse cx="300" cy="200" rx="85" ry="58" fill="#94a3b8"/>
+              <circle cx="300" cy="128" r="46" fill="#cbd5e1"/>
+              <circle cx="284" cy="118" r="6" fill="#0f172a"/>
+              <circle cx="316" cy="118" r="6" fill="#0f172a"/>
+              <ellipse cx="300" cy="138" rx="18" ry="12" fill="#94a3b8"/>
+              <!-- Сложенные лапки -->
+              <ellipse cx="300" cy="195" rx="42" ry="16" fill="#cbd5e1"/>
+              <text x="300" y="310" text-anchor="middle" fill="#f1f5f9" font-family="Inter, sans-serif" font-weight="800" font-size="30" letter-spacing="5">ЖДУН</text>
+            </svg>
+            <span class="picture-badge">Фантастическая комедия</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">👽 Ждун</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              Весёлая и лёгкая приключенческая комедия про добродушного инопланетянина Ждуна, потерпевшего крушение на Земле. Позитивный фильм с юмором для отличного отдыха.
+            </p>
+            <div class="desc-tags">
+              <span>Комедия</span>
+              <span>Приключения</span>
+              <span>Позитив</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Операция «Ы» -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="opBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#7f1d1d"/>
+                  <stop offset="100%" stop-color="#1c1917"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#opBg)"/>
+              <text x="300" y="185" text-anchor="middle" fill="#fde047" font-family="Inter, sans-serif" font-weight="800" font-size="96">«Ы»</text>
+              <text x="300" y="305" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="800" font-size="24" letter-spacing="3">ОПЕРАЦИЯ «Ы»</text>
+            </svg>
+            <span class="picture-badge">Золотая классика</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">🎬 Операция «Ы» и другие приключения Шурика</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              Легендарная комедия Леонида Гайдая про студента Шурика и знаменитую троицу (Трус, Балбес и Бывалый). Каждый эпизод давно разобран на крылатые фразы, а пересматривать фильм всегда смешно.
+            </p>
+            <div class="desc-tags">
+              <span>Советская классика</span>
+              <span>Гайдай</span>
+              <span>Шедевр комедии</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Брат -->
+        <article class="picture-card" tabindex="0" role="button" aria-expanded="false">
+          <div class="picture-wrapper">
+            <svg class="card-illustration" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="brBg" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#18181b"/>
+                  <stop offset="100%" stop-color="#27272a"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="360" fill="url(#brBg)"/>
+              <!-- Аудиокассета плеер -->
+              <rect x="200" y="95" width="200" height="125" rx="12" fill="#3f3f46" stroke="#a1a1aa" stroke-width="4"/>
+              <rect x="225" y="115" width="150" height="60" rx="6" fill="#18181b"/>
+              <circle cx="265" cy="145" r="18" fill="none" stroke="#e4e4e7" stroke-width="5"/>
+              <circle cx="335" cy="145" r="18" fill="none" stroke="#e4e4e7" stroke-width="5"/>
+              <text x="300" y="305" text-anchor="middle" fill="#f4f4f5" font-family="Inter, sans-serif" font-weight="800" font-size="34" letter-spacing="8">БРАТ</text>
+            </svg>
+            <span class="picture-badge">Культовая драма</span>
+            <div class="click-hint">👆 Нажмите для описания</div>
+          </div>
+          <div class="picture-header">
+            <h3 class="picture-title">🎧 Брат</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="picture-description">
+            <p>
+              Культовый фильм Алексея Балабанова с Сергеем Бодровым в роли Данилы Багрова. Уникальная атмосфера Петербурга 90-х, сильный характер главного героя и легендарная музыка «Наутилуса».
+            </p>
+            <div class="desc-tags">
+              <span>Культовое кино</span>
+              <span>Сергей Бодров</span>
+              <span>В чём сила, брат?</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 Курицын Артём • г. Бор • Нижегородское речное училище</p>
+      <a href="https://vk.ru/temma9" target="_blank" rel="noopener noreferrer" class="footer-vk">ВКонтакте: vk.ru/temma9 ↗</a>
+    </div>
+  </footer>
+
+  <!-- Всплывающее уведомление (Toast) -->
+  <div id="toast" class="toast" role="status" aria-live="polite">Ссылка скопирована!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
